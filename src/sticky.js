@@ -1,10 +1,10 @@
 var Sticky = (function() {
     var Position = {
         getOffset: function(dom) {
-            var x = (dom.offsetLeft - dom.scrollLeft), y = (dom.offsetTop - dom.scrollTop);
+            var x = dom.offsetLeft, y = dom.offsetTop;
             while (dom = dom.offsetParent) {
-                x += (dom.offsetLeft - dom.scrollLeft);
-                y += (dom.offsetTop - dom.scrollTop);
+                x += dom.offsetLeft;
+                y += dom.offsetTop;
             }
             return { x: x, y: y };
         },
@@ -55,22 +55,23 @@ var Sticky = (function() {
         }
         else {
             children.forEach(function(dom) {
-                var wh = window.innerHeight,
+                var s = dom.style,
+                    wh = window.innerHeight,
                     h1 = dom.offsetHeight,
                     h2 = wrap.offsetHeight
                 ;
-                if(h1 < wh) dom.style.top = (-posY + 'px');
+                if(h1 < wh) s.top = (-posY + 'px');
                 else {
-                    var s = dom.style;
+                    var top = parseInt(s.top);
                     if(originY - posY < 0) {
-                        if(-posY < parseInt(s.top)) {
+                        if(-posY < top) {
                             s.top = (-posY + 'px');
                         }
                     }
                     else {
-                        var t = (h1 - wh) + posY;
-                        if(t < 0) {
-                            s.top = (h1 - t < h2 ? -t : h2 - h1) + 'px';
+                        var pos = (h1 - wh) + posY;
+                        if(!s.top || pos + top < 0) {
+                            s.top = (h1 - pos < h2 ? -pos : h2 - h1) + 'px';
                         }
                     }
                 }
