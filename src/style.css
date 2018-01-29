@@ -1,0 +1,21 @@
+#wrap {
+  width: 1280px;
+  margin: 100px auto;
+}
+#wrap > div {
+  width: 33.3%;
+  vertical-align: top;
+  display: inline-block;
+}
+#wrap > .green {
+  height: 500px;
+  background-color: green;
+}
+#wrap > .blue {
+  height: 2500px;
+  background-color: blue;
+}
+#wrap > .red {
+  height: 1500px;
+  background-color: red;
+}
