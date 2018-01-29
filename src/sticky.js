@@ -36,27 +36,44 @@ var Sticky = (function() {
     }
 
     function Sticky(dom) {
-        this.target = dom;
-        this.children = initChildren(dom);
-
         var _this = this;
-        window.addEventListener('scroll', function() {
-            var y = Position.getAbsolute(dom).y;
-            if(y < 0) {
-                _this.children.forEach(function(dom) {
-                    if(dom.offsetHeight < window.innerHeight) {
-                        dom.style.top = (-y + 'px');
-                    }
-                });
-            }
-            else {
-                _this.children.forEach(function(dom) {
-                    if(dom.offsetHeight < window.innerHeight) {
-                        dom.style.top = '0px';
-                    }
-                });
-            }
-        });
+        this.target = dom;
+        this.posY = Position.getAbsolute(dom).y;
+        this.children = initChildren(dom);
+        window.addEventListener('scroll', function() { _this.scrolling(); });
     };
+
+    Sticky.prototype.scrolling = function() {
+        var wrap = this.target,
+            children = this.children,
+            posY = Position.getAbsolute(wrap).y
+        ;
+        var originY = this.posY;
+        if(posY < 0) {
+            children.forEach(function(dom) {
+                var height = dom.offsetHeight;
+                if(height < window.innerHeight) dom.style.top = (-posY + 'px');
+                else {
+                    if(originY - posY < 0) {
+                        if(-posY < parseInt(dom.style.top))
+                        dom.style.top = (-posY + 'px');
+                    }
+                    else {
+                        var t = (height - window.innerHeight) + posY;
+                        if(t < 0) {
+                            dom.style.top = (height - t < wrap.offsetHeight ? -t : wrap.offsetHeight - height) + 'px';
+                        }
+                    }
+                }
+            });
+        }
+        else {
+            children.forEach(function(dom) {
+                dom.style.top = '0px';
+            });
+        }
+        this.posY = posY;
+    };
+
     return Sticky;
 }());
