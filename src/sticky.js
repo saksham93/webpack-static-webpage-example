@@ -37,39 +37,43 @@ var Sticky = (function() {
 
     function Sticky(dom) {
         var _this = this;
-        this.target = dom;
-        this.posY = Position.getAbsolute(dom).y;
-        this.children = initChildren(dom);
+        _this.target = dom;
+        _this.posY = Position.getAbsolute(dom).y;
+        _this.children = initChildren(dom);
         window.addEventListener('scroll', function() { _this.scrolling(); });
     };
 
     Sticky.prototype.scrolling = function() {
         var wrap = this.target,
             children = this.children,
-            posY = Position.getAbsolute(wrap).y
+            posY = Position.getAbsolute(wrap).y,
+            originY = this.posY
         ;
-        var originY = this.posY;
-        if(posY < 0) {
-            children.forEach(function(dom) {
-                var height = dom.offsetHeight;
-                if(height < window.innerHeight) dom.style.top = (-posY + 'px');
-                else {
-                    if(originY - posY < 0) {
-                        if(-posY < parseInt(dom.style.top))
-                        dom.style.top = (-posY + 'px');
-                    }
-                    else {
-                        var t = (height - window.innerHeight) + posY;
-                        if(t < 0) {
-                            dom.style.top = (height - t < wrap.offsetHeight ? -t : wrap.offsetHeight - height) + 'px';
-                        }
-                    }
-                }
-            });
+        console.log(Position.getAbsolute(wrap));
+        if(0 < posY) {
+            children.forEach(function(dom) { dom.style.top = '0px'; });
         }
         else {
             children.forEach(function(dom) {
-                dom.style.top = '0px';
+                var wh = window.innerHeight,
+                    h1 = dom.offsetHeight,
+                    h2 = wrap.offsetHeight
+                ;
+                if(h1 < wh) dom.style.top = (-posY + 'px');
+                else {
+                    var s = dom.style;
+                    if(originY - posY < 0) {
+                        if(-posY < parseInt(s.top)) {
+                            s.top = (-posY + 'px');
+                        }
+                    }
+                    else {
+                        var t = (h1 - wh) + posY;
+                        if(t < 0) {
+                            s.top = (h1 - t < h2 ? -t : h2 - h1) + 'px';
+                        }
+                    }
+                }
             });
         }
         this.posY = posY;
