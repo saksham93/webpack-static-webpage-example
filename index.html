@@ -5,6 +5,19 @@
     <title>WebHosting</title>
     <link rel="stylesheet" href="./src/style.css">
     <script type="text/javascript" src="./src/sticky.js"></script>
+    <style>
+        #ImageCropper {
+            position: relative;
+        }
+        #crop {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
     <h1>Image Cropper</h1>
@@ -12,6 +25,10 @@
         <input id="file" type="file">
     </label>
     <img id="preview" src=""/>
+    <section id="ImageCropper">
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <div id="crop"></div>
+    </section>
     <h1>Sticky</h1>
     <section id="wrap"><div class="red"></div><div class="blue"></div><div class="green"></div></section>
 
@@ -24,11 +41,28 @@
     <script>
         var reader = new FileReader();
         var fileInput = document.getElementById('file');
+        var preview = document.getElementById('preview');
+        var cvs = document.getElementById('canvas');
+        var ctx = cvs.getContext('2d');
+
         fileInput.addEventListener('change', function() {
             reader.readAsDataURL(fileInput.files[0]);
         });
+        var w = 0, h = 0, func = function() {};
         reader.addEventListener('load', function() {
-            document.getElementById('preview').src = reader.result;
+            preview.src = reader.result;
+            w = preview.width, h = preview.height;
+            func = function() {
+                ctx.clearRect(0, 0, 500, 500);
+                ctx.drawImage(preview, 250 - w / 2, 250 - h / 2, w, h);
+            };
+            preview.addEventListener('load', func);
+        });
+        cvs.addEventListener('wheel', function(e) {
+            w -= e.deltaY;
+            h -= e.deltaY;
+            func();
+            e.preventDefault();
         });
     </script>
 </body>
