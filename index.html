@@ -13,8 +13,9 @@
     </label>
     <section id="ImageCropper">
         <img id="preview" src=""/>
-        <canvas id="canvas" width="500" height="500"></canvas>
+        <canvas id="canvas" width="200px" height="100px" style="left: 150px; top: 200px;"></canvas>
     </section>
+    <button id="crop">Crop</button>
     <h1>Sticky</h1>
     <section id="wrap"><div class="red"></div><div class="blue"></div><div class="green"></div></section>
 
@@ -60,23 +61,32 @@
             e.preventDefault();
             w -= e.deltaY * r;
             h -= e.deltaY;
-            // ctx.clearRect(0, 0, 500, 500);
-            // ctx.drawImage(preview, 250 - w / 2, 250 - h / 2, w, h);
             func();
         });
 
-
+        var cl = 150, ct = 200;
+        var x = 0, y = 0;
         function mouseMove(e) {
-            console.log(e);
             e.preventDefault();
+            cvs.style.top = (ct += (e.clientY - y)) + 'px';
+            cvs.style.left = (cl += (e.clientX - x)) + 'px';
+            x = e.clientX;
+            y = e.clientY;
         }
         function mouseUp() {
             ImageCropper.removeEventListener('mousemove', mouseMove);
             document.body.removeEventListener('mouseup', mouseUp);
         }
-        cvs.addEventListener('mousedown', function() {
+        cvs.addEventListener('mousedown', function(e) {
+            x = e.clientX;
+            y = e.clientY;
             ImageCropper.addEventListener('mousemove', mouseMove);
             document.body.addEventListener('mouseup', mouseUp);
+        });
+
+        document.getElementById('crop').addEventListener('click', function() {
+            ctx.clearRect(0, 0, 500, 500);
+            ctx.drawImage(preview, parseInt(cl - l) + 1, parseInt(ct - t) + 1, 200, 100, 0, 0, 200, 100);
         });
     </script>
 </body>
