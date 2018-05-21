@@ -48,18 +48,19 @@
         fileInput.addEventListener('change', function() {
             reader.readAsDataURL(fileInput.files[0]);
         });
-        var w = 0, h = 0, func = function() {};
+        var w = 0, h = 0, r = 0, func = function() {
+            ctx.clearRect(0, 0, 500, 500);
+            ctx.drawImage(preview, 250 - w / 2, 250 - h / 2, w, h);
+        };
         reader.addEventListener('load', function() {
             preview.src = reader.result;
-            w = preview.width, h = preview.height;
-            func = function() {
-                ctx.clearRect(0, 0, 500, 500);
-                ctx.drawImage(preview, 250 - w / 2, 250 - h / 2, w, h);
-            };
-            preview.addEventListener('load', func);
+            preview.addEventListener('load', function() {
+                w = preview.width, h = preview.height, r = w / h;
+                func();
+            });
         });
         cvs.addEventListener('wheel', function(e) {
-            w -= e.deltaY;
+            w -= e.deltaY * r;
             h -= e.deltaY;
             func();
             e.preventDefault();
