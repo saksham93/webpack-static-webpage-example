@@ -11,10 +11,9 @@
     <label>
         <input id="file" type="file">
     </label>
-    <img id="preview" src=""/>
     <section id="ImageCropper">
+        <img id="preview" src=""/>
         <canvas id="canvas" width="500" height="500"></canvas>
-        <div id="crop"></div>
     </section>
     <h1>Sticky</h1>
     <section id="wrap"><div class="red"></div><div class="blue"></div><div class="green"></div></section>
@@ -31,14 +30,25 @@
         var preview = document.getElementById('preview');
         var cvs = document.getElementById('canvas');
         var ctx = cvs.getContext('2d');
+        var ImageCropper = document.getElementById('ImageCropper');
 
         fileInput.addEventListener('change', function() {
             reader.readAsDataURL(fileInput.files[0]);
         });
-        var w = 0, h = 0, r = 0, func = function() {
-            ctx.clearRect(0, 0, 500, 500);
-            ctx.drawImage(preview, 250 - w / 2, 250 - h / 2, w, h);
-        };
+        var w = 0,
+            h = 0,
+            r = 0,
+            t = 0,
+            l = 0,
+            func = function() {
+                t = 250 - h / 2;
+                l = 250 - w / 2;
+                preview.style.top = t + 'px';
+                preview.style.left = l + 'px';
+                preview.style.width = w + 'px';
+                preview.style.height = h + 'px';
+            }
+        ;
         reader.addEventListener('load', function() {
             preview.src = reader.result;
             preview.addEventListener('load', function() {
@@ -46,11 +56,27 @@
                 func();
             });
         });
-        cvs.addEventListener('wheel', function(e) {
+        ImageCropper.addEventListener('wheel', function(e) {
+            e.preventDefault();
             w -= e.deltaY * r;
             h -= e.deltaY;
+            // ctx.clearRect(0, 0, 500, 500);
+            // ctx.drawImage(preview, 250 - w / 2, 250 - h / 2, w, h);
             func();
+        });
+
+
+        function mouseMove(e) {
+            console.log(e);
             e.preventDefault();
+        }
+        function mouseUp() {
+            ImageCropper.removeEventListener('mousemove', mouseMove);
+            document.body.removeEventListener('mouseup', mouseUp);
+        }
+        cvs.addEventListener('mousedown', function() {
+            ImageCropper.addEventListener('mousemove', mouseMove);
+            document.body.addEventListener('mouseup', mouseUp);
         });
     </script>
 </body>
