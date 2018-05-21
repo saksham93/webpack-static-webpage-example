@@ -49,7 +49,6 @@ var Sticky = (function() {
             posY = Position.getAbsolute(wrap).y,
             originY = this.posY
         ;
-        console.log(Position.getAbsolute(wrap));
         if(0 < posY) {
             children.forEach(function(dom) { dom.style.top = '0px'; });
         }
