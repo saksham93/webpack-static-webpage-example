@@ -36,6 +36,7 @@
         fileInput.addEventListener('change', function() {
             reader.readAsDataURL(fileInput.files[0]);
         });
+        var originW = 0, originH = 0;
         var w = 0,
             h = 0,
             r = 0,
@@ -54,6 +55,7 @@
             preview.src = reader.result;
             preview.addEventListener('load', function() {
                 w = preview.width, h = preview.height, r = w / h;
+                originW = preview.width, originH = preview.height;
                 func();
             });
         });
@@ -85,8 +87,12 @@
         });
 
         document.getElementById('crop').addEventListener('click', function() {
-            ctx.clearRect(0, 0, 500, 500);
-            ctx.drawImage(preview, parseInt(cl - l) + 1, parseInt(ct - t) + 1, 200, 100, 0, 0, 200, 100);
+            var ratio = originW / w;
+            var img = new Image();
+            ctx.drawImage(preview, Math.round((cl - l + 1) * ratio), Math.round((ct - t + 1) * ratio), 200 * ratio, 100 * ratio, 0, 0, 200, 100);
+            img.src = cvs.toDataURL();
+            ImageCropper.insertAdjacentElement('afterend', img);
+            ctx.clearRect(0, 0, 200, 100);
         });
     </script>
 </body>
