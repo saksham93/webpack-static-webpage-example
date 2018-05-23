@@ -1,4 +1,4 @@
-(function() {
+window.addEventListener('DOMContentLoaded', function() {
     var reader = new FileReader();
     var fileInput = document.getElementById('file');
     var preview = document.getElementById('preview');
@@ -67,4 +67,4 @@
         ImageCropper.insertAdjacentElement('afterend', img);
         ctx.clearRect(0, 0, 200, 100);
     });
-}());
+});
