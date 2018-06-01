@@ -1,3 +1,31 @@
+var Cropper = (function () {
+    function Cropper() {
+        var _this = this;
+        _this.canvas = document.createElement('canvas'), _this.canvas.width = 200, _this.canvas.height = 100;
+        _this.origin = {
+            width: 0,
+            height: 0
+        };
+        _this.preview = {
+            top: 0,
+            left: 0,
+            width: 0,
+            height: 0,
+            ratio: 0,
+            image: document.createElement('img')
+        };
+        _this.dom = document.createElement('section'), _this.dom.appendChild(_this.preview.image), _this.dom.appendChild(_this.canvas);
+        _this.reader = new FileReader();
+
+        /* 나중에 지우자 */
+        _this.dom.style.cssText = 'position: relative; width: 500px; height: 500px; overflow: hidden; border: 1px solid black;';
+        _this.preview.image.style.cssText = 'position: absolute;';
+        _this.canvas.style.cssText = 'position: absolute; cursor: pointer; border: 1px solid black;';
+        /****************/
+    }
+    return Cropper;
+}());
+
 window.addEventListener('DOMContentLoaded', function() {
     var reader = new FileReader();
     var fileInput = document.getElementById('file');
