@@ -1,2 +1,2 @@
-# WebHosting
-https://troytae.github.io/WebHosting/
+# Demo
+https://frogramer.github.io/WebHosting
