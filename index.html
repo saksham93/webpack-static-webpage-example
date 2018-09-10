@@ -2,31 +2,11 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>WebHosting</title>
-    <link rel="stylesheet" href="./src/style.css">
-    <script type="text/javascript" src="./src/sticky.js"></script>
-    <script type="text/javascript" src="./src/cropper.js"></script>
+    <title>element-position</title>
 </head>
 <body>
-    <h1>Image Cropper</h1>
-    <label>
-        <input id="file" type="file">
-    </label>
-    <section id="ImageCropper">
-        <img id="preview" src=""/>
-        <canvas id="canvas" width="200px" height="100px" style="left: 150px; top: 200px;"></canvas>
-    </section>
-    <button id="crop">Crop</button>
-    <h1>Sticky</h1>
-    <section id="wrap"><div class="red"></div><div class="blue"></div><div class="green"></div></section>
-
-    <script>
-        window.addEventListener('load', function () {
-            new Sticky(document.getElementById('wrap'));
-        });
-
-        var cropper = new Cropper();
-        document.body.insertAdjacentElement('afterbegin', cropper.dom);
-    </script>
+    <a>Offset Position</a>
+    <a>Scroll Position</a>
+    <a>Absolute Position</a>
 </body>
 </html>
