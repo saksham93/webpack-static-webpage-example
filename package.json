@@ -1,6 +1,6 @@
 {
   "name": "element-positioin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This module can caculate DOM's position value.",
   "author": {
     "name": "Troy Tae",
@@ -22,9 +22,6 @@
   "engines": {
     "node": ">= 0.4.0"
   },
-  "licenses": [ {
-    "type": "MIT",
-    "url": "http://www.opensource.org/licenses/MIT"
-  } ],
+  "license": "MIT",
   "keywords": ["position", "DOM", "element", "html"]
 }
