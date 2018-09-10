@@ -19,7 +19,9 @@
         Array.prototype.slice.call(document.getElementsByClassName('target')).forEach(function (target) {
             target.textContent = (
                 'offsetRight: ' + target.offsetRight + ', ' +
-                'offsetBottom: ' + target.offsetBottom + ', '
+                'offsetBottom: ' + target.offsetBottom + ', ' +
+                'absoluteLeft: ' + target.absoluteLeft + ', ' +
+                'absoluteTop: ' + target.absoluteTop + ', '
             );
         });
     </script>
