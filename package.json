@@ -1,0 +1,30 @@
+{
+  "name": "element-positioin",
+  "version": "0.1.0",
+  "description": "This module can caculate DOM's position value.",
+  "author": {
+    "name": "Troy Tae",
+    "email": "tjy9745@gmail.com",
+    "url": "https://troytae.github.io/element-position/"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TroyTae/element-position.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TroyTae/element-position/issues"
+  },
+  "main": "./lib/element-position",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {},
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT"
+  } ],
+  "keywords": ["position", "DOM", "element", "html"]
+}
