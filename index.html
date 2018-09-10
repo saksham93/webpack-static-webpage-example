@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>element-position</title>
+    <script src="./src/element-position.js"></script>
 </head>
 <body>
-    <a href="./test/offset.html">Offset Position</a>
-    <a href="./test/scroll.html">Scroll Position</a>
-    <a href="./test/absolute.html">Absolute Position</a>
+    <style>
+        body, p { margin: 0; }
+        p { height: 30px; }
+        div { padding: 19px; border: 1px solid black; }
+    </style>
+    <div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p></div></div></div></div></div></div></div>
+    <div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p></div></div></div></div></div></div></div>
+    <div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p></div></div></div></div></div></div></div>
+    <div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p></div></div></div></div></div></div></div>
+    <script>
+        Array.prototype.slice.call(document.getElementsByClassName('target')).forEach(function (target) {
+            target.textContent = (
+                'offsetRight: ' + target.offsetRight + ', ' +
+                'offsetBottom: ' + target.offsetBottom + ', '
+            );
+        });
+    </script>
 </body>
 </html>
