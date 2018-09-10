@@ -1,7 +1,7 @@
 {
   "name": "element-positioin",
   "version": "0.1.2",
-  "description": "This module can caculate DOM's position value.",
+  "description": "Calculates the position of the DOM.",
   "author": {
     "name": "Troy Tae",
     "email": "tjy9745@gmail.com",
