@@ -16,13 +16,14 @@
     <div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p></div></div></div></div></div></div></div>
     <div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p><div><p class="target">test</p></div></div></div></div></div></div></div>
     <script>
-        Array.prototype.slice.call(document.getElementsByClassName('target')).forEach(function (target) {
-            target.textContent = (
-                'offsetRight: ' + target.offsetRight + ', ' +
-                'offsetBottom: ' + target.offsetBottom + ', ' +
-                'absoluteLeft: ' + target.absoluteLeft + ', ' +
-                'absoluteTop: ' + target.absoluteTop + ', '
-            );
+        window.addEventListener('scroll', function () {
+            Array.prototype.slice.call(document.getElementsByClassName('target')).forEach(function (target) {
+                var pos = Position.getAbsolute(target);
+                target.textContent = (
+                    'absoluteLeft: ' + pos.left + ', ' +
+                    'absoluteTop: ' + pos.top + ', '
+                );
+            });
         });
     </script>
 </body>
