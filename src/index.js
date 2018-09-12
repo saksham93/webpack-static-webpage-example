@@ -1,4 +1,4 @@
-var Position = (function () {
+module.exports = (function () {
     return {
         getOffset: function(target) {
             var left = target.offsetLeft,
