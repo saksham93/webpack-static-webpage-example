@@ -1,7 +1,7 @@
-module.exports = (function () {
+let Position = (function () {
     return {
-        getOffset: function(target) {
-            var left = target.offsetLeft,
+        getNestedOffset: function(target) {
+            let left = target.offsetLeft,
                 top = target.offsetTop,
                 right = target.offsetLeft + target.offsetWidth,
                 bottom = target.offsetTop + target.offsetHeight
@@ -19,8 +19,8 @@ module.exports = (function () {
                 bottom: bottom
             };
         },
-        getScroll: function(target) {
-            var x = 0,
+        getNestedScroll: function(target) {
+            let x = 0,
                 y = 0
             ;
             while (target = target.parentElement) {
@@ -33,8 +33,8 @@ module.exports = (function () {
             };
         },
         getAbsolute: function(target) {
-            var offsetPos = this.getOffset(target),
-                scrollPos = this.getScroll(target)
+            let offsetPos = this.getNestedOffset(target),
+                scrollPos = this.getNestedScroll(target)
             ;
             return {
                 left: (offsetPos.left - scrollPos.x),
@@ -45,3 +45,5 @@ module.exports = (function () {
         }
     };
 }());
+
+export default Position;

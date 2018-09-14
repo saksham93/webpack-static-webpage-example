@@ -1,7 +1,8 @@
 export default {
     input: 'src/main.js',
     output: {
-        file: 'bundle.js',
-        format: 'umd'
+        file: 'dist/element-position.js',
+        format: 'umd',
+        name: 'Position'
     }
 };
