@@ -2,11 +2,11 @@
   "name": "element-positioin",
   "version": "0.1.3",
   "description": "Calculates the position of the DOM.",
-  "main": "src/element-position",
+  "main": "dist/element-position",
   "author": {
     "name": "Troy Tae",
     "email": "tjy9745@gmail.com",
-    "url": "https://troytae.github.io/element-position/"
+    "url": "https://github.com/TroyTae/element-position"
   },
   "repository": {
     "type": "git",
