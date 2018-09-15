@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>element-position</title>
+    <script src="../dist/element-position.js"></script>
+</head>
+<body>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        (function () {
+            var arr = document.getElementById('list').getElementsByTagName('li');
+            for (var i = 0, max = arr.length; i < max; ++i) {
+                (function (dom) {
+                    var absolutePos = Position.getAbsolute(dom);
+                    dom.textContent = (
+                        'top: ' + absolutePos.top +
+                        ', left: ' + absolutePos.left +
+                        ', right: ' + absolutePos.right +
+                        ', bottom: ' + absolutePos.bottom
+                    );
+                }(arr[i]));
+            }
+        }());
+    </script>
+</body>
+</html>
