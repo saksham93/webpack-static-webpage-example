@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>element-position</title>
+    <script src="../dist/element-position.js"></script>
+    <style>
+        #list {
+            height: 100px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scroll for test!</h1>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+    <script>
+        var target = document.getElementById('list');
+        target.addEventListener('scroll', function () {
+            var arr = target.getElementsByTagName('li');
+            for (var i = 0, max = arr.length; i < max; ++i) {
+                (function (target) {
+                    var nestedScroll = Position.getNestedScroll(target);
+                    target.textContent = (
+                        'x: ' + nestedScroll.x +
+                        ', y: ' + nestedScroll.y
+                    );
+                }(arr[i]));
+            }
+        });
+    </script>
+</body>
+</html>
