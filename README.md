@@ -8,6 +8,3 @@ https://github.com/TroyTae/element-position/wiki
 
 ## Issue
 https://github.com/TroyTae/element-position/issues
-
-## example
-https://troytae.github.io/element-position/
