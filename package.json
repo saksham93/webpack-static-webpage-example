@@ -2,7 +2,7 @@
   "name": "element-position",
   "version": "0.1.2",
   "description": "Calculates the position of the DOM.",
-  "main": "dist/element-position",
+  "main": "dist/index.js",
   "author": {
     "name": "Troy Tae",
     "email": "tjy9745@gmail.com",
@@ -16,8 +16,9 @@
     "url": "https://github.com/TroyTae/element-position/issues"
   },
   "devDependencies": {
-    "rollup": "^0.65.2",
+    "rollup": "^0.66.4",
     "typescript": "^3.0.3",
+    "rollup-plugin-uglify": "^6.0.0",
     "rollup-plugin-typescript": "^0.8.1"
   },
   "scripts": {
