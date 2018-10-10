@@ -5,3 +5,4 @@ node_modules
 index.html
 rollup.config.js
 tsconfig.json
+package-lock.json
