@@ -22,7 +22,7 @@
     "rollup-plugin-typescript": "^0.8.1"
   },
   "scripts": {
-    "rollup": "rollup --config rollup.config.js"
+    "build": "rollup --config rollup.config.js"
   },
   "license": "MIT",
   "keywords": [
