@@ -1,6 +1,6 @@
 {
   "name": "element-position",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Calculates the position of the DOM.",
   "main": "dist/index.js",
   "author": {
