@@ -1,4 +1,10 @@
 export function maxZIndex(target) {
-    console.log(target);
-    return 1;
+    let zIndex= 0,
+        nodes = [target]
+    ;
+    while (nodes.length) {
+        let node = nodes.pop();
+        nodes.concat(...node.children);
+    }
+    return zIndex;
 }
