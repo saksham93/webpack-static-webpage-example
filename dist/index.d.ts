@@ -16,3 +16,4 @@ declare namespace Position {
         bottom: number
     };
 }
+export = Position;
