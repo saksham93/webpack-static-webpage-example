@@ -1,11 +1,9 @@
-import * as offset from "./offset";
-import * as scroll from "./scroll";
-import * as absolute from "./absolute";
-// import * as zIndex from "./zIndex";
+import { OFFSET } from "./offset";
+import { SCROLL } from "./scroll";
+import { ABSOLUTE } from "./absolute";
 
 export default {
-    getNestedOffset: offset.getNestedOffset,
-    getNestedScroll: scroll.getNestedScroll,
-    getAbsolute: absolute.getAbsolute,
-    // maxZIndex: zIndex.maxZIndex
+    getNestedOffset: OFFSET.getNestedOffset,
+    getNestedScroll: SCROLL.getNestedScroll,
+    getAbsolute: ABSOLUTE.getAbsolute
 }

@@ -11,7 +11,7 @@ export default {
         name: 'Position'
     },
     plugins: [
-        typescript(),
-        uglify()
+        uglify(),
+        typescript()
     ]
 };
