@@ -1,16 +1,16 @@
-import { OFFSET } from "./offset";
-import { SCROLL } from "./scroll";
+import {OFFSET} from "./offset";
+import {SCROLL} from "./scroll";
 
 export const ABSOLUTE = {
-    getAbsolute: (target: HTMLElement) => {
-        let offsetPos = OFFSET.getNestedOffset(target),
-            scrollPos = SCROLL.getNestedScroll(target)
+    getAbsolute: (el: HTMLElement) => {
+        let offset = OFFSET.getNestedOffset(el),
+            scroll = SCROLL.getNestedScroll(el)
         ;
         return {
-            left: (offsetPos.left - scrollPos.x),
-            top: (offsetPos.top - scrollPos.y),
-            right: (offsetPos.right - scrollPos.x),
-            bottom: (offsetPos.bottom - scrollPos.y)
+            left: (offset.left - scroll.x),
+            top: (offset.top - scroll.y),
+            right: (offset.right - scroll.x),
+            bottom: (offset.bottom - scroll.y)
         };
     }
 };

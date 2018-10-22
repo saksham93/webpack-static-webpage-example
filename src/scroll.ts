@@ -1,11 +1,11 @@
 export const SCROLL = {
-    getNestedScroll: (target: HTMLElement) => {
+    getNestedScroll: (el: HTMLElement) => {
         let x = 0,
             y = 0
         ;
-        while (target = target.parentElement) {
-            x += target.scrollLeft;
-            y += target.scrollTop;
+        while (el = el.parentElement) {
+            x += el.scrollLeft;
+            y += el.scrollTop;
         }
         return {
             x: x,

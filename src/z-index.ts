@@ -1,11 +1,11 @@
 export const Z_INDEX = {
-    maxZIndex: (target: HTMLElement) => {
-        let zIndex= 0,
-            nodes = [target]
+    maxZIndex: (el: HTMLElement) => {
+        let zIndex = 0,
+            elements = [el]
         ;
-        while (nodes.length) {
-            let node = nodes.pop();
-            nodes.concat(Array.prototype.slice.call(node.children));
+        while (elements.length) {
+            el = elements.pop();
+            elements.concat(Array.prototype.slice.call(el.children));
         }
         return zIndex;
     }

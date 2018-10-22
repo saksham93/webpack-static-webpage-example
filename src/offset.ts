@@ -1,15 +1,15 @@
 export const OFFSET = {
-    getNestedOffset: (target: HTMLElement) => {
-        let left = target.offsetLeft,
-            top = target.offsetTop,
-            right = target.offsetLeft + target.offsetWidth,
-            bottom = target.offsetTop + target.offsetHeight
+    getNestedOffset: (el: HTMLElement) => {
+        let left = el.offsetLeft,
+            top = el.offsetTop,
+            right = el.offsetLeft + el.offsetWidth,
+            bottom = el.offsetTop + el.offsetHeight
         ;
-        while (target = target.parentElement) {
-            left += target.offsetLeft;
-            top += target.offsetTop;
-            right += target.offsetLeft;
-            bottom += target.offsetTop;
+        while (el = (el.offsetParent as HTMLElement)) {
+            left += el.offsetLeft;
+            top += el.offsetTop;
+            right += el.offsetLeft;
+            bottom += el.offsetTop;
         }
         return {
             left: left,

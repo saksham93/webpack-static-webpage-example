@@ -1,15 +1,15 @@
 declare namespace Position {
-    function getNestedOffset(el: Element): {
+    function getNestedOffset(el: HTMLElement): {
         top: number,
         left: number,
         right: number,
         bottom: number
     }
-    function getNestedScroll(el: Element): {
+    function getNestedScroll(el: HTMLElement): {
         x: number,
         y: number
     }
-    function getAbsolute(el: Element): {
+    function getAbsolute(el: HTMLElement): {
         top: number,
         left: number,
         right: number,
