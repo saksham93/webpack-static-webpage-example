@@ -2,7 +2,7 @@ import { OFFSET } from "./offset";
 import { SCROLL } from "./scroll";
 
 export const ABSOLUTE = {
-    getAbsolute: (target) => {
+    getAbsolute: (target: HTMLElement) => {
         let offsetPos = OFFSET.getNestedOffset(target),
             scrollPos = SCROLL.getNestedScroll(target)
         ;

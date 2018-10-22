@@ -1,5 +1,5 @@
 export const Z_INDEX = {
-    maxZIndex: (target) => {
+    maxZIndex: (target: HTMLElement) => {
         let zIndex= 0,
             nodes = [target]
         ;

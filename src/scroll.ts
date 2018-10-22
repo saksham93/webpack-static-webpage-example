@@ -1,5 +1,5 @@
 export const SCROLL = {
-    getNestedScroll: (target) => {
+    getNestedScroll: (target: HTMLElement) => {
         let x = 0,
             y = 0
         ;

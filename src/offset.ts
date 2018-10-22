@@ -1,5 +1,5 @@
 export const OFFSET = {
-    getNestedOffset: (target) => {
+    getNestedOffset: (target: HTMLElement) => {
         let left = target.offsetLeft,
             top = target.offsetTop,
             right = target.offsetLeft + target.offsetWidth,
