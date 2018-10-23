@@ -4,7 +4,7 @@ import typescript from 'rollup-plugin-typescript';
 
 const INPUT = 'src/main.ts';
 const OUTPUT_FORMAT = 'umd';
-const OUTPUT_NAME = 'Position';
+const OUTPUT_NAME = 'ElementPosition';
 
 export default [{
     input: INPUT,
@@ -20,7 +20,7 @@ export default [{
 }, {
     input: INPUT,
     output: {
-        file: pkg.main.replace(/min\.js$/, 'js'),
+        file: pkg.main.replace(/\.min/, ''),
         format: OUTPUT_FORMAT,
         name: OUTPUT_NAME
     },

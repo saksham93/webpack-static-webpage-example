@@ -6,7 +6,7 @@
   "author": {
     "name": "Troy Tae",
     "email": "tjy9745@gmail.com",
-    "url": "https://github.com/TroyTae/element-position"
+    "url": "https://github.com/TroyTae"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,11 @@
     "position",
     "DOM",
     "element",
-    "html"
+    "html",
+    "front-end",
+    "coordinates",
+    "loaction",
+    "scroll",
+    "offset"
   ]
 }
