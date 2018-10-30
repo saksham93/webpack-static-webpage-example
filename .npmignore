@@ -1,8 +1,7 @@
+bin
 src
 .idea
 node_modules
 *.iml
 index.html
-rollup.config.js
-tsconfig.json
 package-lock.json

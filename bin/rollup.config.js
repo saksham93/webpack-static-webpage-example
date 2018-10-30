@@ -1,6 +1,7 @@
-import pkg from './package.json';
+import pkg from '../package.json';
 import {uglify} from 'rollup-plugin-uglify';
 import typescript from 'rollup-plugin-typescript';
+import tsConfig from './tsconfig.json';
 
 const INPUT = 'src/main.ts';
 const OUTPUT_FORMAT = 'umd';
@@ -15,7 +16,7 @@ export default [{
     },
     plugins: [
         uglify(),
-        typescript()
+        typescript(tsConfig)
     ]
 }, {
     input: INPUT,
@@ -24,5 +25,5 @@ export default [{
         format: OUTPUT_FORMAT,
         name: OUTPUT_NAME
     },
-    plugins: [typescript()]
+    plugins: [typescript(tsConfig)]
 }];
