@@ -48,10 +48,26 @@
         }
     };
 
+    var PROPERTY_NAME = 'z-index';
+    var Z_INDEX = {
+        maxZIndex: function (el) {
+            var maxZIndex = 0, elements = [el];
+            while (elements.length) {
+                var zIndex = Number(window
+                    .getComputedStyle(el = elements.pop())
+                    .getPropertyValue(PROPERTY_NAME));
+                zIndex > maxZIndex && (maxZIndex = zIndex);
+                elements.concat(Array.prototype.slice.call(el.children));
+            }
+            return maxZIndex;
+        }
+    };
+
     var main = {
         getNestedOffset: OFFSET.getNestedOffset,
         getNestedScroll: SCROLL.getNestedScroll,
-        getAbsolute: ABSOLUTE.getAbsolute
+        getAbsolute: ABSOLUTE.getAbsolute,
+        maxZIndex: Z_INDEX.maxZIndex
     };
 
     return main;
