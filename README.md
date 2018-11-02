@@ -1,6 +1,6 @@
-# Element Position
+## Element Position
 
-## Introduction
+### Introduction
 This is a library that can calculate html element's position.
 
 ### Installation
@@ -30,3 +30,6 @@ console.log(
     p.getNestedScroll(el)
 );
 ```
+
+### Issue
+https://github.com/TroyTae/element-position/issues
