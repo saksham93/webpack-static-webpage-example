@@ -2,6 +2,6 @@ bin
 src
 .idea
 node_modules
+
 *.iml
-index.html
 package-lock.json
