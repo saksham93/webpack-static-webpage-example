@@ -3,13 +3,13 @@
 ### Introduction
 This is a library that can calculate html element's position.
 
-### Installation
+## Installation
 ```npm install element-position```
 
-### Issue
+## Issue
 [Please register your issue here!](https://github.com/TroyTae/element-position/issues)
 
-### Usage
+## Usage
 ```javascript
 // ES Module
 const el = document.getElementById('id');
