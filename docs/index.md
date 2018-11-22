@@ -4,11 +4,13 @@ layout: default
 
 # Element Position
 
-This is a library that can calculate html element's position.
+> This is a library that can calculate html element's position.
 
 ## Installation
 
-```npm install element-position```
+```
+npm install element-position
+```
 
 ## Usage
 ```js
@@ -28,13 +30,26 @@ const pos = p.getAbsolute(el);
 console.log(pos.top, pos.left, pos.right, pos.bottom);
 ```
 
-### API List:
+## API List:
 
 - Coordinates
   - [getAbsolute](./coordinates/absolute.html)
 - Nested Position
   - [getNestedOffset](./nested-position/offset.html)
   - [getNestedScroll](./nested-position/scroll.html)
+
+### Issue
+
+[Please register your issue here!](https://github.com/TroyTae/element-position/issues)
+
+### Code Of Conduct
+
+[See our code of conduct!](https://github.com/TroyTae/element-position/blob/master/CODE_OF_CONDUCT.md)
+
+### LICENSE
+
+[Our LICENSE is MIT!](https://github.com/TroyTae/element-position/blob/master/LICENSE.md)
+
 
 <!--
 #### Header 4
