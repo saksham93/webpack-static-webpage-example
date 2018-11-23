@@ -4,7 +4,7 @@
     (global.ElementPosition = factory());
 }(this, (function () { 'use strict';
 
-    var OFFSET = {
+    var Offset = {
         getNestedOffset: function (el) {
             var left = el.offsetLeft, top = el.offsetTop, right = el.offsetLeft + el.offsetWidth, bottom = el.offsetTop + el.offsetHeight;
             while (el = el.offsetParent) {
@@ -22,7 +22,7 @@
         }
     };
 
-    var SCROLL = {
+    var Scroll = {
         getNestedScroll: function (el) {
             var x = 0, y = 0;
             while (el = el.parentElement) {
@@ -38,7 +38,7 @@
 
     var Coordinates = {
         getCoordinates: function (el) {
-            var offset = OFFSET.getNestedOffset(el), scroll = SCROLL.getNestedScroll(el);
+            var offset = Offset.getNestedOffset(el), scroll = Scroll.getNestedScroll(el);
             return {
                 left: (offset.left - scroll.x),
                 top: (offset.top - scroll.y),
@@ -49,8 +49,8 @@
     };
 
     var main = {
-        getNestedOffset: OFFSET.getNestedOffset,
-        getNestedScroll: SCROLL.getNestedScroll,
+        getNestedOffset: Offset.getNestedOffset,
+        getNestedScroll: Scroll.getNestedScroll,
         getCoordinates: Coordinates.getCoordinates
     };
 

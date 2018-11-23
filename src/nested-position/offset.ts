@@ -1,4 +1,4 @@
-export const OFFSET = {
+export const Offset = {
     getNestedOffset: (el: HTMLElement) => {
         let left = el.offsetLeft,
             top = el.offsetTop,

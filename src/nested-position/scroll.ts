@@ -1,4 +1,4 @@
-export const SCROLL = {
+export const Scroll = {
     getNestedScroll: (el: HTMLElement) => {
         let x = 0,
             y = 0

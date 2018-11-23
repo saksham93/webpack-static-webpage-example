@@ -1,10 +1,10 @@
-import {OFFSET} from "../nested-position/offset";
-import {SCROLL} from "../nested-position/scroll";
+import {Offset} from "../nested-position/offset";
+import {Scroll} from "../nested-position/scroll";
 
 export const Coordinates = {
     getCoordinates: (el: HTMLElement) => {
-        let offset = OFFSET.getNestedOffset(el),
-            scroll = SCROLL.getNestedScroll(el)
+        let offset = Offset.getNestedOffset(el),
+            scroll = Scroll.getNestedScroll(el)
         ;
         return {
             left: (offset.left - scroll.x),
