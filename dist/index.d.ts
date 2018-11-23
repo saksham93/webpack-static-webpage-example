@@ -11,7 +11,7 @@ declare namespace ElementPosition {
         y: number
     }
 
-    function getAbsolute(el: HTMLElement): {
+    function getCoordinates(el: HTMLElement): {
         top: number,
         left: number,
         right: number,

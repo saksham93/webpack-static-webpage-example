@@ -36,8 +36,8 @@
         }
     };
 
-    var ABSOLUTE = {
-        getAbsolute: function (el) {
+    var Coordinates = {
+        getCoordinates: function (el) {
             var offset = OFFSET.getNestedOffset(el), scroll = SCROLL.getNestedScroll(el);
             return {
                 left: (offset.left - scroll.x),
@@ -51,7 +51,7 @@
     var main = {
         getNestedOffset: OFFSET.getNestedOffset,
         getNestedScroll: SCROLL.getNestedScroll,
-        getAbsolute: ABSOLUTE.getAbsolute
+        getCoordinates: Coordinates.getCoordinates
     };
 
     return main;

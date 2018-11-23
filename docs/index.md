@@ -16,7 +16,7 @@ npm install element-position
 ```js
 // ES Module
 var el = document.getElementById('id');
-var pos = ElementPosition.getAbsolute(el);
+var pos = ElementPosition.getCoordinates(el);
 
 console.log(pos.top, pos.left, pos.right, pos.bottom);
 ```
@@ -25,7 +25,7 @@ console.log(pos.top, pos.left, pos.right, pos.bottom);
 import * as p from 'element-position';
 
 const el = document.getElementById('id');
-const pos = p.getAbsolute(el);
+const pos = p.getCoordinates(el);
 
 console.log(pos.top, pos.left, pos.right, pos.bottom);
 ```
@@ -33,7 +33,7 @@ console.log(pos.top, pos.left, pos.right, pos.bottom);
 ## API List:
 
 - Coordinates
-  - [getAbsolute](./coordinates/absolute.html)
+  - [getCoordinates](./coordinates/coordinates.html)
 - Nested Position
   - [getNestedOffset](./nested-position/offset.html)
   - [getNestedScroll](./nested-position/scroll.html)

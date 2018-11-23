@@ -1,8 +1,8 @@
 import {OFFSET} from "../nested-position/offset";
 import {SCROLL} from "../nested-position/scroll";
 
-export const ABSOLUTE = {
-    getAbsolute: (el: HTMLElement) => {
+export const Coordinates = {
+    getCoordinates: (el: HTMLElement) => {
         let offset = OFFSET.getNestedOffset(el),
             scroll = SCROLL.getNestedScroll(el)
         ;

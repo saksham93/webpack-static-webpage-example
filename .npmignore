@@ -1,5 +1,6 @@
 bin
 src
+docs
 .idea
 node_modules
 

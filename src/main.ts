@@ -1,9 +1,9 @@
 import {OFFSET} from "./nested-position/offset";
 import {SCROLL} from "./nested-position/scroll";
-import {ABSOLUTE} from "./coordinates/absolute";
+import {Coordinates} from "./coordinates/coordinates";
 
 export default {
     getNestedOffset: OFFSET.getNestedOffset,
     getNestedScroll: SCROLL.getNestedScroll,
-    getAbsolute: ABSOLUTE.getAbsolute
+    getCoordinates: Coordinates.getCoordinates
 }
