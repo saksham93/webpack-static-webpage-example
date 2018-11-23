@@ -35,7 +35,7 @@ var el = document.getElementById('id1');
 window.addEventListener('scroll', function() {
     var pos = ElementPosition.getAbsolute(el);
     if (pos.bottom < 0) {
-        console.log('Oh no! I can\'t see that OTL.');
+        console.log('Oh no! I cannot see that OTL.');
     }
 });
 ```

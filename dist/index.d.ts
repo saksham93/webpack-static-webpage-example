@@ -17,8 +17,6 @@ declare namespace ElementPosition {
         right: number,
         bottom: number
     }
-
-    function maxZIndex(el: HTMLElement): number;
 }
 
 export = ElementPosition;

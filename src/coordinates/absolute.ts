@@ -1,5 +1,5 @@
-import {OFFSET} from "./offset";
-import {SCROLL} from "./scroll";
+import {OFFSET} from "../nested-position/offset";
+import {SCROLL} from "../nested-position/scroll";
 
 export const ABSOLUTE = {
     getAbsolute: (el: HTMLElement) => {
