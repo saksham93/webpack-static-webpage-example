@@ -15,8 +15,8 @@ npm install element-position
 ## Usage
 ```js
 // ES Module
-const el = document.getElementById('id');
-const pos = ElementPosition.getAbsolute(el);
+var el = document.getElementById('id');
+var pos = ElementPosition.getAbsolute(el);
 
 console.log(pos.top, pos.left, pos.right, pos.bottom);
 ```
@@ -92,15 +92,4 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 ### Large image
 ![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
 -->
