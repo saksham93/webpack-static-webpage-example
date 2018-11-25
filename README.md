@@ -1,6 +1,6 @@
 # Element Position
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
+[![NPM Version](https://img.shields.io/npm/v/element-position.svg)](https://www.npmjs.com/package/element-position)
+[![LICENSE](https://img.shields.io/github/license/TroyTae/element-position.svg)]()
   
 ## Introduction
 This is a library that can calculate html element's position.
