@@ -1,6 +1,8 @@
-## Element Position
-
-### Introduction
+# Element Position
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+  
+## Introduction
 This is a library that can calculate html element's position.
 
 ## Installation
