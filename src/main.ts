@@ -1,9 +1,7 @@
-import {Offset} from "./nested-position/offset";
-import {Scroll} from "./nested-position/scroll";
-import {Coordinates} from "./coordinates/coordinates";
+import {ComputePosition} from "./compute-position/compute-position";
 
 export default {
-    getNestedOffset: Offset.getNestedOffset,
-    getNestedScroll: Scroll.getNestedScroll,
-    getCoordinates: Coordinates.getCoordinates
+    getNestedOffset: ComputePosition.getNestedOffset,
+    getNestedScroll: ComputePosition.getNestedScroll,
+    getCoordinates: ComputePosition.getCoordinates
 }

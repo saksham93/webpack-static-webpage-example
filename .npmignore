@@ -2,7 +2,10 @@ bin
 src
 docs
 
-.idea
+# git ignore
 node_modules
-*.iml
 package-lock.json
+
+# IntelliJ IDEA
+*.iml
+.idea
