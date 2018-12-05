@@ -1,8 +1,8 @@
 bin
 src
 docs
+
 .idea
 node_modules
-
 *.iml
 package-lock.json
