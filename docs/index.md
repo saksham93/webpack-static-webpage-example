@@ -32,11 +32,10 @@ console.log(pos.top, pos.left, pos.right, pos.bottom);
 
 ## API List:
 
-- Coordinates
-  - [getCoordinates](./coordinates/coordinates.html)
-- Nested Position
-  - [getNestedOffset](./nested-position/offset.html)
-  - [getNestedScroll](./nested-position/scroll.html)
+- Compute Position
+  - [getCoordinates](./compute-position/coordinates.html)
+  - [getNestedOffset](./compute-position/nested-offset.html)
+  - [getNestedScroll](./compute-position/nested-scroll.html)
 
 ### Issue
 
