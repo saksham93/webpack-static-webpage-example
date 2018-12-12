@@ -30,6 +30,8 @@ const pos = p.getCoordinates(el);
 console.log(pos.top, pos.left, pos.right, pos.bottom);
 ```
 
+{% include test.html %}
+
 ## API List:
 
 - Compute Position
