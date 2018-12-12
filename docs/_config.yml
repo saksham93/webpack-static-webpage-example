@@ -3,3 +3,5 @@ description: Do not complicate the HTML element position, I'll do it for you.
 lang: ko
 show_downloads: true
 theme: jekyll-theme-cayman
+sources:
+  - _assets/js
