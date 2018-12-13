@@ -40,7 +40,7 @@ window.addEventListener('scroll', function() {
 });
 ```
 
-### Demo(fade in on scroll down)
+### Demo (fade in on scroll down)
 
 {% include fade-scroll.html %}
 

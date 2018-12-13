@@ -51,16 +51,6 @@ console.log(pos.top, pos.left, pos.right, pos.bottom);
 
 
 <!--
-#### Header 4
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
 ### There's a horizontal rule below this.
 * * *
 

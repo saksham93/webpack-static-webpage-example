@@ -8,7 +8,7 @@
   }
 </style>
 
-<div id="scroll-target" style="width: 300px; height: 300px; border: 1px solid black; overflow-y: scroll">
+<div id="scroll-target" style="width: 300px; height: 300px; border: 1px solid black; overflow-y: scroll;">
   <div style="width: 200px; height: 200px; background-color: red;">scroll down!!</div>
   <div data-fade style="width: 150px; height: 150px; background-color: blue;">scroll down!!</div>
   <div data-fade style="width: 250px; height: 250px; background-color: yellow;">scroll down!!</div>
@@ -20,13 +20,15 @@
   <div data-fade style="width: 250px; height: 250px; background-color: yellow;">scroll down!!</div>
 </div>
 
-
 <script>
-  document.getElementById('scroll-target').addEventListener('scroll', function() {
+  var target = document.getElementById('scroll-target');
+  target.addEventListener('scroll', function() {
     var arr = Array.prototype.slice.call(document.querySelectorAll('[data-fade]'));
     arr.forEach(function (el) {
-      var pos = ElementPosition.getCoordinates(el);
-      if (pos.top < 200) el.removeAttribute('data-fade');
+      var p1 = ElementPosition.getCoordinates(el),
+          p2 = ElementPosition.getCoordinates(target)
+      ;
+      if (p1.top - p2.top < 200) el.removeAttribute('data-fade');
     });
   });
 </script>
