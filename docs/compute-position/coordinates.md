@@ -39,3 +39,11 @@ window.addEventListener('scroll', function() {
     }
 });
 ```
+
+### Demo(fade in on scroll down)
+
+{% include fade-scroll.html %}
+
+```html
+{% include fade-scroll.html %}
+```

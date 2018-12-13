@@ -30,16 +30,6 @@ const pos = p.getCoordinates(el);
 console.log(pos.top, pos.left, pos.right, pos.bottom);
 ```
 
-## Demo
-
-### fade in on scroll down
-
-{% include fade-scroll.html %}
-
-```html
-{% include fade-scroll.html %}
-```
-
 ## API List:
 
 - Compute Position
