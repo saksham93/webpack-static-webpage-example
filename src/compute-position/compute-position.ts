@@ -3,7 +3,7 @@ import {getNestedScroll} from "./scroll";
 import {getCoordinates} from "./coordinates";
 
 export const ComputePosition = {
-	getNestedOffset,
-	getNestedScroll,
-	getCoordinates
+  getNestedOffset,
+  getNestedScroll,
+  getCoordinates
 };
