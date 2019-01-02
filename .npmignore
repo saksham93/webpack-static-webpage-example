@@ -2,7 +2,7 @@ bin
 src
 docs
 
-# git ignore
+# npm
 node_modules
 package-lock.json
 
