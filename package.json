@@ -2,7 +2,7 @@
   "name": "element-position",
   "version": "0.3.1",
   "description": "Calculates the position of the DOM.",
-  "main": "dist/element-position.min.js",
+  "main": "dist/index.min.js",
   "author": {
     "name": "Troy Tae",
     "email": "tjy9745@gmail.com",
