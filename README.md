@@ -8,6 +8,10 @@ This is a library that can calculate html element's position.
 ## Installation
 ```npm install element-position```
 
+or
+
+[Download js file and import your project!](https://github.com/TroyTae/element-position/tree/master/dist)
+
 ## Documentation
 [Please see the detailed document here!](https://troytae.github.io/element-position)
 
