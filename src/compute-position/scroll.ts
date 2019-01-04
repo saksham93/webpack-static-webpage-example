@@ -6,8 +6,5 @@ export function getNestedScroll(el: HTMLElement) {
     x += el.scrollLeft;
     y += el.scrollTop;
   }
-  return {
-    x: x,
-    y: y
-  };
+  return { x, y };
 }

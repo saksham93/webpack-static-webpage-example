@@ -12,12 +12,7 @@
           right += el.offsetLeft;
           bottom += el.offsetTop;
       }
-      return {
-          left: left,
-          top: top,
-          right: right,
-          bottom: bottom
-      };
+      return { left: left, top: top, right: right, bottom: bottom };
   }
 
   function getNestedScroll(el) {
@@ -26,10 +21,7 @@
           x += el.scrollLeft;
           y += el.scrollTop;
       }
-      return {
-          x: x,
-          y: y
-      };
+      return { x: x, y: y };
   }
 
   function getCoordinates(el) {

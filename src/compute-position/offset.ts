@@ -10,10 +10,5 @@ export function getNestedOffset(el: HTMLElement) {
     right += el.offsetLeft;
     bottom += el.offsetTop;
   }
-  return {
-    left: left,
-    top: top,
-    right: right,
-    bottom: bottom
-  };
+  return { left, top, right, bottom };
 }
