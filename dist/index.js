@@ -1,8 +1,8 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global.ElementPosition = factory());
-}(this, (function () { 'use strict';
+  (global = global || self, global.ElementPosition = factory());
+}(this, function () { 'use strict';
 
   function getNestedOffset(el) {
       var left = el.offsetLeft, top = el.offsetTop, right = el.offsetLeft + el.offsetWidth, bottom = el.offsetTop + el.offsetHeight;
@@ -48,4 +48,4 @@
 
   return main;
 
-})));
+}));
