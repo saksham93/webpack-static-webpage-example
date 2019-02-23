@@ -40,14 +40,14 @@
       getCoordinates: getCoordinates
   };
 
+  var sticky = function () {
+      console.log('sticky!');
+  };
   var Sticky = (function () {
       function Sticky(target) {
           this.target = target;
-          window.addEventListener('scroll', this.event, { passive: true });
+          window.addEventListener('scroll', sticky, { passive: true });
       }
-      Sticky.prototype.event = function () {
-          console.log('111');
-      };
       return Sticky;
   }());
 

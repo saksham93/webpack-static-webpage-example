@@ -1,15 +1,15 @@
 let elements = [];
 
+const sticky = function() {
+  console.log('sticky!');
+};
+
 export class Sticky {
   target: HTMLElement;
 
 
   constructor(target: HTMLElement) {
     this.target = target;
-    window.addEventListener('scroll', this.event, { passive: true });
-  }
-
-  event() {
-    console.log('111');
+    window.addEventListener('scroll', sticky, { passive: true });
   }
 }
