@@ -40,26 +40,10 @@
       getCoordinates: getCoordinates
   };
 
-  var elements = [];
-  function sticky() {
-      elements.forEach(function (element) {
-          console.log(element);
-      });
-  }
-  var Sticky = (function () {
-      function Sticky(target, option) {
-          this.target = target;
-          this.option = option;
-          window.addEventListener('scroll', sticky, { passive: true });
-      }
-      return Sticky;
-  }());
-
   var main = {
       getNestedOffset: ComputePosition.getNestedOffset,
       getNestedScroll: ComputePosition.getNestedScroll,
-      getCoordinates: ComputePosition.getCoordinates,
-      Sticky: Sticky
+      getCoordinates: ComputePosition.getCoordinates
   };
 
   return main;
