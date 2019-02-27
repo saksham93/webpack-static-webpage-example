@@ -40,12 +40,16 @@
       getCoordinates: getCoordinates
   };
 
-  var sticky = function () {
-      console.log('sticky!');
-  };
+  var elements = [];
+  function sticky() {
+      elements.forEach(function (element) {
+          console.log(element);
+      });
+  }
   var Sticky = (function () {
-      function Sticky(target) {
+      function Sticky(target, option) {
           this.target = target;
+          this.option = option;
           window.addEventListener('scroll', sticky, { passive: true });
       }
       return Sticky;
