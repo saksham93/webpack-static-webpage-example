@@ -1,4 +1,4 @@
-import {StickyOption} from "./sticky-option";
+import {StickyOption} from "./sticky.d";
 
 let elements = [];
 
@@ -9,12 +9,20 @@ function sticky() {
 }
 
 export class Sticky {
-  target: HTMLElement;
-  option: StickyOption;
+  top?: number;
+  left?: number;
+  right?: number;
+  bottom?: number;
+  element: HTMLElement;
 
-  constructor(target: HTMLElement, option: StickyOption) {
-    this.target = target;
-    this.option = option;
+  constructor(element: HTMLElement, option: StickyOption) {
+    
+    this.element = element;
+    this.top = option.top;
+    this.left = option.left;
+    this.right = option.right;
+    this.bottom = option.bottom;
+
     window.addEventListener('scroll', sticky, { passive: true });
   }
 }
