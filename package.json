@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "tslib": "^1.9.3",
-    "typescript": "^3.3.3",
-    "rollup": "^1.2.3",
+    "typescript": "^3.3.3333",
+    "rollup": "^1.4.1",
     "rollup-plugin-uglify": "^6.0.2",
     "rollup-plugin-typescript": "^1.0.0"
   },
