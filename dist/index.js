@@ -40,32 +40,7 @@
       getCoordinates: getCoordinates
   };
 
-  var elements = [];
-  function sticky() {
-      elements.forEach(function (element) {
-          console.log(element);
-      });
-  }
-  var Sticky = (function () {
-      function Sticky(element, option) {
-          if (option.top === undefined &&
-              option.left === undefined &&
-              option.right === undefined &&
-              option.bottom === undefined) {
-              throw 'Set one or more of the options "top", "left", "right", or "bottom".';
-          }
-          this.element = element;
-          this.top = option.top;
-          this.left = option.left;
-          this.right = option.right;
-          this.bottom = option.bottom;
-          window.addEventListener('scroll', sticky, { passive: true });
-      }
-      return Sticky;
-  }());
-
   var main = {
-      Sticky: Sticky,
       getNestedOffset: ComputePosition.getNestedOffset,
       getNestedScroll: ComputePosition.getNestedScroll,
       getCoordinates: ComputePosition.getCoordinates
