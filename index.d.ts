@@ -1,19 +1,10 @@
 import { Coordinates } from "type/coordinates";
+import { PositionRect } from "type/position-rect";
 
 declare namespace ElementPosition {
-  function getNestedOffset(el: HTMLElement): {
-    top: number,
-    left: number,
-    right: number,
-    bottom: number
-  }
+  function getNestedOffset(el: HTMLElement): PositionRect
   function getNestedScroll(el: HTMLElement): Coordinates
-  function getCoordinates(el: HTMLElement): {
-    top: number,
-    left: number,
-    right: number,
-    bottom: number
-  }
+  function getCoordinates(el: HTMLElement): PositionRect
 }
 
 export = ElementPosition;

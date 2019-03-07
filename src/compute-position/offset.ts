@@ -1,4 +1,6 @@
-export function getNestedOffset(el: HTMLElement) {
+import { PositionRect } from "type/position-rect";
+
+export function getNestedOffset(el: HTMLElement): PositionRect {
   let left = el.offsetLeft,
       top = el.offsetTop,
       right = el.offsetLeft + el.offsetWidth,

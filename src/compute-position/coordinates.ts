@@ -1,7 +1,9 @@
+import { PositionRect } from "type/position-rect";
+
 import {getNestedOffset} from "./offset";
 import {getNestedScroll} from "./scroll";
 
-export function getCoordinates(el: HTMLElement) {
+export function getCoordinates(el: HTMLElement): PositionRect {
   let offset = getNestedOffset(el),
       scroll = getNestedScroll(el)
   ;
