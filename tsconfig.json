@@ -1,0 +1,9 @@
+{
+  "extends": "./bin/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "type/*": ["type/*"]
+    }
+  }
+}
