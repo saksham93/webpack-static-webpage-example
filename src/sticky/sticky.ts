@@ -16,12 +16,13 @@ export class Sticky {
   element: HTMLElement;
 
   constructor(element: HTMLElement, option: PositionRect) {
-    if(
-      option.top === undefined &&
+    if (!element) {
+      throw 'Element is required.';
+    }
+    if (option.top === undefined &&
       option.left === undefined &&
       option.right === undefined &&
-      option.bottom === undefined
-    ) {
+      option.bottom === undefined) {
       throw 'Set one or more of the options "top", "left", "right", or "bottom".';
     }
     
