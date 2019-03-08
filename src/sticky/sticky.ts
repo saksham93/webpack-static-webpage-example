@@ -1,4 +1,4 @@
-import {StickyOption} from "./sticky.d";
+import { PositionRect } from "type/position-rect";
 
 let elements = [];
 
@@ -15,7 +15,7 @@ export class Sticky {
   bottom?: number;
   element: HTMLElement;
 
-  constructor(element: HTMLElement, option: StickyOption) {
+  constructor(element: HTMLElement, option: PositionRect) {
     if(
       option.top === undefined &&
       option.left === undefined &&
