@@ -40,7 +40,28 @@
       getCoordinates: getCoordinates
   };
 
+  var Style = (function () {
+      function Style() {
+          document.head.appendChild(this.element = document.createElement('style'));
+          this.isActive = true;
+          this.sheet = this.element.sheet;
+      }
+      Style.prototype.setActive = function (isActive) {
+          if (this.isActive !== isActive) {
+              if (this.isActive = isActive) {
+                  document.head.appendChild(this.element);
+              }
+              else {
+                  document.head.removeChild(this.element);
+              }
+          }
+      };
+      return Style;
+  }());
+
   var elements = [];
+  var style = new Style();
+  window['aa'] = style;
   function sticky() {
       elements.forEach(function (element) {
           console.log(element);

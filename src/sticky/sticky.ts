@@ -1,9 +1,9 @@
 import { PositionRect } from "type/position-rect";
 
+import { Style } from "./style";
+
 const elements = [];
-const style = document.createElement('style');
-document.head.appendChild(style);
-const sheet = style.sheet;
+const style = new Style();
 
 function sticky() {
   elements.forEach((element) => {
