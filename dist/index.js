@@ -57,11 +57,11 @@
               option.bottom === undefined) {
               throw 'Set one or more of the options "top", "left", "right", or "bottom".';
           }
-          this.element = element;
           this.top = option.top;
           this.left = option.left;
           this.right = option.right;
           this.bottom = option.bottom;
+          elements.push(this.element = element);
           window.addEventListener('scroll', sticky, { passive: true });
       }
       return Sticky;
