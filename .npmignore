@@ -1,11 +1,8 @@
 bin
 src
 docs
+tsconfig.json
 
 # npm
 node_modules
 package-lock.json
-
-# IntelliJ IDEA
-*.iml
-.idea
