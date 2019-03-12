@@ -3,7 +3,7 @@
 [![LICENSE](https://img.shields.io/github/license/TroyTae/smooth-sticky.svg)](https://github.com/TroyTae/smooth-sticky/blob/master/LICENSE.md)
   
 ## Introduction
-This is a library that can calculate html element's position.
+The `smooth-sticky` makes for `position: sticky`.
 
 ## Installation
 ```npm install smooth-sticky```
