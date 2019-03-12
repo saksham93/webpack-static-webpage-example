@@ -1,6 +1,5 @@
-import { PositionRect } from "type/position-rect";
-
 import { Style } from "./style";
+import { StickyOption } from "./sticky-option";
 
 const elements = [];
 const style = new Style();
@@ -11,14 +10,14 @@ function sticky() {
   });
 }
 
-export class Sticky {
+export default class Sticky {
   top?: number;
   left?: number;
   right?: number;
   bottom?: number;
   element: HTMLElement;
 
-  constructor(element: HTMLElement, option: PositionRect) {
+  constructor(element: HTMLElement, option: StickyOption) {
     if (!element) {
       throw 'Element is required.';
     }

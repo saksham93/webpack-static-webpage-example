@@ -1,11 +1,12 @@
-import pkg from '../package.json';
 import {uglify} from 'rollup-plugin-uglify';
 import typescript from 'rollup-plugin-typescript';
+
+import pkg from '../package.json';
 import tsConfig from './tsconfig.json';
 
-const INPUT = 'src/main.ts';
+const INPUT = 'src/sticky.ts';
 const OUTPUT_FORMAT = 'umd';
-const OUTPUT_NAME = 'ElementPosition';
+const OUTPUT_NAME = 'SmoothSticky';
 
 export default [{
     input: INPUT,

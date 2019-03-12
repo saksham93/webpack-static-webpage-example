@@ -1,19 +1,19 @@
 {
-  "name": "element-position",
-  "version": "0.3.7",
-  "description": "Calculates the position of the DOM.",
+  "name": "smooth-sticky",
+  "version": "0.1.1",
+  "description": "The `smooth-sticky` makes for `position: sticky`.",
   "main": "dist/index.min.js",
   "author": {
     "name": "Troy Tae",
-    "email": "tjy9745@gmail.com",
+    "email": "tjy970721@gmail.com",
     "url": "https://github.com/TroyTae"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/TroyTae/element-position.git"
+    "url": "git://github.com/TroyTae/smooth-sticky.git"
   },
   "bugs": {
-    "url": "https://github.com/TroyTae/element-position/issues"
+    "url": "https://github.com/TroyTae/smooth-sticky/issues"
   },
   "devDependencies": {
     "tslib": "^1.9.3",
@@ -27,12 +27,10 @@
   },
   "license": "MIT",
   "keywords": [
-    "position",
-    "element",
     "front-end",
-    "coordinates",
-    "loaction",
-    "scroll",
-    "offset"
+    "javascript",
+    "css",
+    "position",
+    "sticky"
   ]
 }
