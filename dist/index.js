@@ -4,30 +4,19 @@
   (global = global || self, global.SmoothSticky = factory());
 }(this, function () { 'use strict';
 
-  var Style = (function () {
-      function Style() {
-          document.head.appendChild(this.element = document.createElement('style'));
-          this.isActive = true;
-          this.sheet = this.element.sheet;
-      }
-      Style.prototype.setActive = function (isActive) {
-          if (this.isActive !== isActive) {
-              if (this.isActive = isActive) {
-                  document.head.appendChild(this.element);
-              }
-              else {
-                  document.head.removeChild(this.element);
-              }
-          }
-      };
-      return Style;
-  }());
-
   var elements = [];
-  var style = new Style();
+  var style = document.createElement('style');
+  document.head.appendChild(style);
+  var sheet = style.sheet;
+  sheet.insertRule(".smooth-sticky-element {\n  transition: transform 750ms;\n}", 0);
   function sticky() {
       elements.forEach(function (element) {
-          console.log(element);
+          console.log(1);
+          var computedStyle = window.getComputedStyle(element).getPropertyValue('transform').match(/matrix\(.*\)/g);
+          if (computedStyle !== null) {
+              element.style.transform = "translateY(" + computedStyle[0].replace(/.*\,\s/g, '').replace(')', '') + ")px";
+          }
+          element.style.transform = "translateY(" + window.scrollY + "px)";
       });
   }
   var Sticky = (function () {
@@ -45,6 +34,7 @@
           this.left = option.left;
           this.right = option.right;
           this.bottom = option.bottom;
+          element.classList.add('smooth-sticky-element');
           elements.push(this.element = element);
           window.addEventListener('scroll', sticky, { passive: true });
       }

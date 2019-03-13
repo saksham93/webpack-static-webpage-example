@@ -1,12 +1,20 @@
-import { Style } from "./style";
 import { StickyOption } from "./sticky-option";
 
 const elements = [];
-const style = new Style();
+const style = document.createElement('style');
+document.head.appendChild(style);
+const sheet = style.sheet as CSSStyleSheet;
+sheet.insertRule(`.smooth-sticky-element {
+  transition: transform 750ms;
+}`, 0);
 
 function sticky() {
   elements.forEach((element) => {
-    console.log(element);
+    const computedStyle = window.getComputedStyle(element).getPropertyValue('transform').match(/matrix\(.*\)/g);
+    if (computedStyle !== null) {
+      element.style.transform = `translateY(${ computedStyle[0].replace(/.*\,\s/g, '').replace(')', '')})px`;
+    }
+    element.style.transform = `translateY(${window.scrollY}px)`;
   });
 }
 
@@ -32,6 +40,7 @@ export default class Sticky {
     this.left = option.left;
     this.right = option.right;
     this.bottom = option.bottom;
+    element.classList.add('smooth-sticky-element');
     elements.push(this.element = element);
 
     window.addEventListener('scroll', sticky, { passive: true });

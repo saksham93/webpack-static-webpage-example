@@ -37,7 +37,7 @@
 	<script src="./index.js"></script>
 	<script>
 		Array.prototype.slice.call(document.getElementsByClassName('box')).forEach(function (el) {
-			var sticky = new ElementPosition.Sticky(el, { top: 1 });
+			var sticky = new SmoothSticky(el, { top: 1 });
 		});
 	</script>
 </body>
