@@ -11,7 +11,6 @@
   sheet.insertRule(".smooth-sticky-element {\n  transition: transform 750ms;\n}", 0);
   function sticky() {
       elements.forEach(function (element) {
-          console.log(1);
           var computedStyle = window.getComputedStyle(element).getPropertyValue('transform').match(/matrix\(.*\)/g);
           if (computedStyle !== null) {
               element.style.transform = "translateY(" + computedStyle[0].replace(/.*\,\s/g, '').replace(')', '') + ")px";
@@ -36,7 +35,10 @@
           this.bottom = option.bottom;
           element.classList.add('smooth-sticky-element');
           elements.push(this.element = element);
-          window.addEventListener('scroll', sticky, { passive: true });
+          window.addEventListener('scroll', sticky, {
+              capture: true,
+              passive: true
+          });
       }
       return Sticky;
   }());

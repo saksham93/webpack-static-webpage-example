@@ -43,6 +43,9 @@ export default class Sticky {
     element.classList.add('smooth-sticky-element');
     elements.push(this.element = element);
 
-    window.addEventListener('scroll', sticky, { passive: true });
+    window.addEventListener('scroll', sticky, {
+      capture: true,
+      passive: true
+    });
   }
 }
