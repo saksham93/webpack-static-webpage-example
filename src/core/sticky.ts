@@ -1,12 +1,7 @@
-import { StickyOption } from "./sticky-option";
+import { StickyOption } from "../type";
+import { CLASS_NAME } from "../constant";
 
 const elements = [];
-const style = document.createElement('style');
-document.head.appendChild(style);
-const sheet = style.sheet as CSSStyleSheet;
-sheet.insertRule(`.smooth-sticky-element {
-  transition: transform 750ms;
-}`, 0);
 
 function sticky() {
   elements.forEach((element) => {
@@ -16,7 +11,7 @@ function sticky() {
   });
 }
 
-export default class Sticky {
+export class Sticky {
   top?: number;
   left?: number;
   right?: number;
@@ -38,7 +33,7 @@ export default class Sticky {
     this.left = option.left;
     this.right = option.right;
     this.bottom = option.bottom;
-    element.classList.add('smooth-sticky-element');
+    element.classList.add(CLASS_NAME.SCROLL_TRANSITION);
     elements.push(this.element = element);
 
     window.addEventListener('scroll', sticky, {

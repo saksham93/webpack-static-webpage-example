@@ -4,11 +4,12 @@
   (global = global || self, global.SmoothSticky = factory());
 }(this, function () { 'use strict';
 
+  var CLASS_NAME;
+  (function (CLASS_NAME) {
+      CLASS_NAME["SCROLL_TRANSITION"] = "smooth-sticky-element";
+  })(CLASS_NAME || (CLASS_NAME = {}));
+
   var elements = [];
-  var style = document.createElement('style');
-  document.head.appendChild(style);
-  var sheet = style.sheet;
-  sheet.insertRule(".smooth-sticky-element {\n  transition: transform 750ms;\n}", 0);
   function sticky() {
       elements.forEach(function (element) {
           var computedStyle = window.getComputedStyle(element).getPropertyValue('transform');
@@ -31,7 +32,7 @@
           this.left = option.left;
           this.right = option.right;
           this.bottom = option.bottom;
-          element.classList.add('smooth-sticky-element');
+          element.classList.add(CLASS_NAME.SCROLL_TRANSITION);
           elements.push(this.element = element);
           window.addEventListener('scroll', sticky, {
               capture: true,
@@ -40,6 +41,11 @@
       }
       return Sticky;
   }());
+
+  var style = document.createElement('style');
+  document.head.appendChild(style);
+  var sheet = style.sheet;
+  sheet.insertRule("." + CLASS_NAME.SCROLL_TRANSITION + " {\n  transition: transform 750ms;\n}", 0);
 
   return Sticky;
 
