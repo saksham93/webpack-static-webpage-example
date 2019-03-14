@@ -11,10 +11,8 @@
   sheet.insertRule(".smooth-sticky-element {\n  transition: transform 750ms;\n}", 0);
   function sticky() {
       elements.forEach(function (element) {
-          var computedStyle = window.getComputedStyle(element).getPropertyValue('transform').match(/matrix\(.*\)/g);
-          if (computedStyle !== null) {
-              element.style.transform = "translateY(" + computedStyle[0].replace(/.*\,\s/g, '').replace(')', '') + ")px";
-          }
+          var computedStyle = window.getComputedStyle(element).getPropertyValue('transform');
+          computedStyle !== null && (element.style.transform = "translateY(" + computedStyle.replace(/.*\,\s/g, '').replace(')', '') + ")px");
           element.style.transform = "translateY(" + window.scrollY + "px)";
       });
   }
