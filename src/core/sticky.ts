@@ -1,14 +1,7 @@
 import { StickyOption } from "../type";
 import { CLASS_NAME } from "../constant";
 import { StickyElement } from "./sticky-element";
-
-function sticky() {
-  StickyElement.elements.forEach((element) => {
-    const computedStyle = window.getComputedStyle(element).getPropertyValue('transform');
-    computedStyle !== null && (element.style.transform = `translateY(${ computedStyle.replace(/.*\,\s/g, '').replace(')', '')})px`);
-    element.style.transform = `translateY(${window.scrollY}px)`;
-  });
-}
+import { StickyHandler } from "./sticky-handler";
 
 export class Sticky {
   top?: number;
@@ -35,7 +28,7 @@ export class Sticky {
     element.classList.add(CLASS_NAME.SCROLL_TRANSITION);
     StickyElement.elements.push(this.element = element);
 
-    window.addEventListener('scroll', sticky, {
+    window.addEventListener('scroll', StickyHandler, {
       capture: true,
       passive: true
     });

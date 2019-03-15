@@ -16,13 +16,14 @@
       };
   })();
 
-  function sticky() {
+  function StickyHandler() {
       StickyElement.elements.forEach(function (element) {
           var computedStyle = window.getComputedStyle(element).getPropertyValue('transform');
           computedStyle !== null && (element.style.transform = "translateY(" + computedStyle.replace(/.*\,\s/g, '').replace(')', '') + ")px");
           element.style.transform = "translateY(" + window.scrollY + "px)";
       });
   }
+
   var Sticky = (function () {
       function Sticky(element, option) {
           if (!element) {
@@ -40,7 +41,7 @@
           this.bottom = option.bottom;
           element.classList.add(CLASS_NAME.SCROLL_TRANSITION);
           StickyElement.elements.push(this.element = element);
-          window.addEventListener('scroll', sticky, {
+          window.addEventListener('scroll', StickyHandler, {
               capture: true,
               passive: true
           });
