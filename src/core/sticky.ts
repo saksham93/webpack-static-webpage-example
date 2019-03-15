@@ -1,10 +1,9 @@
 import { StickyOption } from "../type";
 import { CLASS_NAME } from "../constant";
-
-const elements = [];
+import { StickyElement } from "./sticky-element";
 
 function sticky() {
-  elements.forEach((element) => {
+  StickyElement.elements.forEach((element) => {
     const computedStyle = window.getComputedStyle(element).getPropertyValue('transform');
     computedStyle !== null && (element.style.transform = `translateY(${ computedStyle.replace(/.*\,\s/g, '').replace(')', '')})px`);
     element.style.transform = `translateY(${window.scrollY}px)`;
@@ -34,7 +33,7 @@ export class Sticky {
     this.right = option.right;
     this.bottom = option.bottom;
     element.classList.add(CLASS_NAME.SCROLL_TRANSITION);
-    elements.push(this.element = element);
+    StickyElement.elements.push(this.element = element);
 
     window.addEventListener('scroll', sticky, {
       capture: true,
