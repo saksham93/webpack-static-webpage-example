@@ -8,6 +8,11 @@
   (function (CLASS_NAME) {
       CLASS_NAME["SCROLL_TRANSITION"] = "smooth-sticky-element";
   })(CLASS_NAME || (CLASS_NAME = {}));
+  var TEMPLATE = {
+      TRANSLATE_Y: function (y) {
+          return "translateY(" + y + "px)";
+      }
+  };
 
   var StickyElement = (function () {
       var elements = [];
@@ -19,8 +24,9 @@
   function StickyHandler() {
       StickyElement.elements.forEach(function (element) {
           var computedStyle = window.getComputedStyle(element).getPropertyValue('transform');
-          computedStyle !== null && (element.style.transform = "translateY(" + computedStyle.replace(/.*\,\s/g, '').replace(')', '') + ")px");
-          element.style.transform = "translateY(" + window.scrollY + "px)";
+          computedStyle !== null && (element.style.transform =
+              TEMPLATE.TRANSLATE_Y(parseInt(computedStyle.replace(/.*,/g, '').replace(')', ''))));
+          element.style.transform = TEMPLATE.TRANSLATE_Y(window.scrollY);
       });
   }
 
