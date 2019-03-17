@@ -25,6 +25,7 @@ export class Sticky {
     this.left = option.left;
     this.right = option.right;
     this.bottom = option.bottom;
+    
     element.classList.add(CLASS_NAME.SCROLL_TRANSITION);
     StickyElement.elements.push(this.element = element);
 
