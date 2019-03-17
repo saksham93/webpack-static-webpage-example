@@ -1,6 +1,6 @@
 {
   "name": "smooth-sticky",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "The `smooth-sticky` makes for `position: sticky`.",
   "main": "dist/index.min.js",
   "author": {
