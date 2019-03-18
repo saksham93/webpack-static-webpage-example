@@ -22,12 +22,13 @@
   })();
 
   function StickyHandler() {
-      StickyElement.elements.forEach(function (element) {
+      var i = 0, element, elements = StickyElement.elements;
+      while (element = elements[i++]) {
           var computedStyle = window.getComputedStyle(element).getPropertyValue('transform');
           computedStyle !== null && (element.style.transform =
               TEMPLATE.TRANSLATE_Y(parseInt(computedStyle.replace(/.*,/g, '').replace(')', ''))));
           element.style.transform = TEMPLATE.TRANSLATE_Y(window.scrollY);
-      });
+      }
   }
 
   var Sticky = (function () {
@@ -57,7 +58,8 @@
 
   var style = document.createElement('style');
   document.head.appendChild(style);
-  style.sheet.insertRule("." + CLASS_NAME.SCROLL_TRANSITION + " {\n  transition: transform 750ms;\n}", 0);
+  var sheet = style.sheet;
+  sheet.insertRule("." + CLASS_NAME.SCROLL_TRANSITION + " {\n  transition: transform 750ms;\n}", sheet.rules.length);
 
   return Sticky;
 
