@@ -9,7 +9,7 @@ export function StickyHandler() {
   while (element = elements[i++]) {
     const computedStyle = window.getComputedStyle(element).getPropertyValue('transform');
     computedStyle !== null && (element.style.transform =
-      TEMPLATE.TRANSLATE_Y(parseInt(computedStyle.replace(/.*,/g, '').replace(')', ''))));
+      TEMPLATE.TRANSLATE_Y(parseFloat(computedStyle.replace(/.*,|\)/g, ''))));
     element.style.transform = TEMPLATE.TRANSLATE_Y(window.scrollY);
   }
 }
