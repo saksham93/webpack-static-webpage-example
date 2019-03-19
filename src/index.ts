@@ -7,6 +7,6 @@ document.head.appendChild(style);
 const sheet = (style.sheet as CSSStyleSheet);
 sheet.insertRule(`.${CLASS_NAME.SCROLL_TRANSITION} {
   transition: transform 750ms;
-}`, sheet.rules.length);
+}`, sheet.cssRules.length);
 
 export default Sticky;

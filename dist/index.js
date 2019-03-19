@@ -59,7 +59,7 @@
   var style = document.createElement('style');
   document.head.appendChild(style);
   var sheet = style.sheet;
-  sheet.insertRule("." + CLASS_NAME.SCROLL_TRANSITION + " {\n  transition: transform 750ms;\n}", sheet.rules.length);
+  sheet.insertRule("." + CLASS_NAME.SCROLL_TRANSITION + " {\n  transition: transform 750ms;\n}", sheet.cssRules.length);
 
   return Sticky;
 
