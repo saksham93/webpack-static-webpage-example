@@ -36,9 +36,10 @@
 	</div>
 	<script src="./index.js"></script>
 	<script>
-		Array.prototype.slice.call(document.getElementsByClassName('box')).forEach(function (el) {
-			var sticky = new SmoothSticky(el, { top: 1 });
-		});
+		new SmoothSticky(document.querySelector('.box'), { top: 1 });
+		// Array.prototype.slice.call(document.getElementsByClassName('box')).forEach(function (el) {
+		// 	var sticky = new SmoothSticky(el, { top: 1 });
+		// });
 	</script>
 </body>
 </html>

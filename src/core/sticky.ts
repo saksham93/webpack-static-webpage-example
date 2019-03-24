@@ -21,15 +21,20 @@ export class Sticky {
       throw 'Set one or more of the options "top", "left", "right", or "bottom".';
     }
     
+    this.element = element;
     this.top = option.top;
     this.left = option.left;
     this.right = option.right;
     this.bottom = option.bottom;
-    
-    element.classList.add(CLASS_NAME.SCROLL_TRANSITION);
-    StickyElement.elements.push(this.element = element);
 
-    window.addEventListener('scroll', StickyHandler, {
+    element.classList.add(CLASS_NAME.SCROLL_TRANSITION);
+    window.addEventListener('scroll', () => {
+      if (!StickyElement.elements.some(el => el === this.element)) {
+        StickyElement.elements.push(this.element);
+        StickyHandler(this.element);
+        console.log('set');
+      }
+    }, {
       capture: true,
       passive: true
     });
