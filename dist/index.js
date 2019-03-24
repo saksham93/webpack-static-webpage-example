@@ -32,7 +32,8 @@
           });
       }
       else {
-          element.style.cssText = "transform: " + TEMPLATE.TRANSLATE_Y(isNaN(y) ? window.scrollY : window.scrollY < y ? y - 1 : y + 1) + ";";
+          var goal = Math.round((window.scrollY - y) / 15);
+          element.style.transform = TEMPLATE.TRANSLATE_Y(isNaN(y) ? window.scrollY : window.scrollY < y ? (-1 < goal ? y - 1 : y + goal) : (goal < 1 ? y + 1 : y + goal));
           requestAnimationFrame(function () { return StickyHandler(element); });
           console.log(y);
       }

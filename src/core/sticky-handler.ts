@@ -1,5 +1,6 @@
 import { TEMPLATE } from "../constant";
 import { StickyElement } from "./sticky-element";
+import { getPackedSettings } from "http2";
 
 export function StickyHandler(element: HTMLElement) {
   const y = parseInt(window.getComputedStyle(element).getPropertyValue('transform').replace(/.*,|\)/g, ''));
@@ -11,7 +12,8 @@ export function StickyHandler(element: HTMLElement) {
       }
     });
   } else {
-    element.style.cssText = `transform: ${TEMPLATE.TRANSLATE_Y(isNaN(y) ? window.scrollY : window.scrollY < y ? y - 1 : y + 1)};`;
+    const goal = Math.round((window.scrollY - y) / 15);
+    element.style.transform = TEMPLATE.TRANSLATE_Y(isNaN(y) ? window.scrollY : window.scrollY < y ? (-1 < goal ? y - 1 : y + goal) : (goal < 1 ? y + 1 : y + goal));
     requestAnimationFrame(() => StickyHandler(element));
     console.log(y);
   }
