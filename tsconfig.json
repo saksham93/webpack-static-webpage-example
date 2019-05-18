@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "amd",
+    "target": "es3",
+    "strictNullChecks": true,
+    "removeComments": false
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"],
+  "compileOnSave": false
+}
