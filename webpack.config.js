@@ -35,7 +35,13 @@ module.exports = (env, arg) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: "./src/index.html",
-        favicon: "./src/favicon.ico"
+        favicon: "./src/favicon.ico",
+        minify: {
+          collapseBooleanAttributes: true,
+          collapseInlineTagWhitespace: true,
+          collapseWhitespace: true,
+          removeComments: true
+        }
       })
     ],
     devServer: {
@@ -44,7 +50,6 @@ module.exports = (env, arg) => {
     },
   };
 
-  console.log(JSON.stringify(config.module.rules));
   if (arg.mode === "production") {
     config.plugins = config.plugins.concat([
       new CleanWebpackPlugin()
