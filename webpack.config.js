@@ -15,8 +15,14 @@ module.exports = (env, arg) => {
     },
     module: {
       rules: [{
+        test: /\.png$/,
+        loader: 'file-loader'
+      }, {
+        test: /\.ts$/,
+        loader: "ts-loader"
+      }, {
         test: /\.scss$/,
-        loader: [{
+        use: [{
           loader: "style-loader"
         }, {
           loader: "css-loader"
@@ -24,13 +30,13 @@ module.exports = (env, arg) => {
           loader: "sass-loader",
           options: { includePaths: ["./node_modules"] }
         }]
-      }, {
-        test: /\.ts$/,
-        loader: "ts-loader"
       }]
     },
     plugins: [
-      new HtmlWebpackPlugin({ template: "./src/index.html" })
+      new HtmlWebpackPlugin({
+        template: "./src/index.html",
+        favicon: "./src/favicon.ico"
+      })
     ],
     devServer: {
       port: 4200,
@@ -38,7 +44,8 @@ module.exports = (env, arg) => {
     },
   };
 
-  if (arg.mode === 'production') {
+  console.log(JSON.stringify(config.module.rules));
+  if (arg.mode === "production") {
     config.plugins = config.plugins.concat([
       new CleanWebpackPlugin()
     ]);
