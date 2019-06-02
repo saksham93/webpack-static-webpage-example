@@ -1,4 +1,3 @@
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -8,7 +7,7 @@ module.exports = (env, arg) => {
   const config = {
     entry: "./src/index.ts",
     output: {
-      path: path.join(process.cwd(), "docs"),
+      path: require("path").join(process.cwd(), "docs"),
       filename: "[name].[chunkhash].js",
       crossOriginLoading: false
     },
@@ -28,6 +27,14 @@ module.exports = (env, arg) => {
           loader: MiniCssExtractPlugin.loader
         }, {
           loader: "css-loader"
+        }, {
+          loader: "postcss-loader",
+          options: {
+            plugins: () => [
+              require('autoprefixer')({}),
+              require('cssnano')({ preset: 'default' })
+            ]
+          }
         }, {
           loader: "sass-loader",
           options: { includePaths: ["./node_modules"] }
