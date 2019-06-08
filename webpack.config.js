@@ -2,12 +2,13 @@ const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLInlineCSSWebpackPlugin = require("html-inline-css-webpack-plugin").default;
+const Path = require("path");
 
 module.exports = (env, arg) => {
   const config = {
     entry: "./src/index.ts",
     output: {
-      path: require("path").join(process.cwd(), "docs"),
+      path: Path.join(process.cwd(), "docs"),
       filename: "[name].[chunkhash].js",
       crossOriginLoading: false
     },
@@ -16,7 +17,7 @@ module.exports = (env, arg) => {
     },
     module: {
       rules: [{
-        test: /\.png$/,
+        test: /\.(png|jpe?g)$/,
         loader: 'file-loader'
       }, {
         test: /\.ts$/,
