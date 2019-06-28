@@ -24,24 +24,22 @@ module.exports = (env, arg) => {
         loader: "ts-loader"
       }, {
         test: /\.scss$/,
-        use: [{
-          loader: MiniCssExtractPlugin.loader
-        }, {
-          loader: "css-loader"
-        }, {
-          loader: "postcss-loader",
-          options: {
-            plugins: () => [
-              require('autoprefixer')({
-                grid: 'autoplace'
-              }),
-              require('cssnano')()
-            ]
-          }
-        }, {
-          loader: "sass-loader",
-          options: { includePaths: ["./node_modules"] }
-        }]
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              plugins: () => [
+                require('autoprefixer')({
+                  grid: 'autoplace'
+                }),
+                require('cssnano')()
+              ]
+            }
+          },
+          "sass-loader"
+        ]
       }]
     },
     plugins: [
