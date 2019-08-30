@@ -1,6 +1,6 @@
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HTMLInlineCSSWebpackPlugin = require("html-inline-css-webpack-plugin").default;
 const Path = require("path");
 
@@ -18,7 +18,7 @@ module.exports = (env, arg) => {
     module: {
       rules: [{
         test: /\.(png|jpe?g)$/,
-        loader: 'file-loader'
+        loader: "file-loader"
       }, {
         test: /\.ts$/,
         loader: "ts-loader"
@@ -31,10 +31,10 @@ module.exports = (env, arg) => {
             loader: "postcss-loader",
             options: {
               plugins: () => [
-                require('autoprefixer')({
-                  grid: 'autoplace'
+                require("autoprefixer")({
+                  grid: "autoplace"
                 }),
-                require('cssnano')()
+                require("cssnano")()
               ]
             }
           },
