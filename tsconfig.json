@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "removeComments": true,
     "strict": true,
     "target": "es3"
   },
