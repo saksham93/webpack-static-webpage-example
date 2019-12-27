@@ -26,7 +26,7 @@ If you wanna start server, use this command.
 ```
 npm run start
 ```
-Then you can open this url(http://localhost:4200) in you browser.
+Then you can open this url(http://localhost:4200) in your browser.
 
 If you wanna build, use this command.
 ```
